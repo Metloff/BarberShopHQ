@@ -1,7 +1,10 @@
- require 'rubygems'
+#encoding: utf-8
+require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
+
+
 
 # подключение к БД
 set :database, "sqlite3:barbershop.db"
@@ -32,5 +35,11 @@ end
 post '/visit' do
 	
 	c = Client.new params[:client]
-	c.save
+
+	if c.save
+		erb "Thanks"
+	else
+		erb "Ошибка!"
+	end
+	#@error = c.errors.messages.values.join(',')
 end
