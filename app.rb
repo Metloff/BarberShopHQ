@@ -39,7 +39,8 @@ post '/visit' do
 	if c.save
 		erb "Thanks"
 	else
-		erb "Ошибка!"
+		@error = c.errors.full_messages.first
+		erb :visit
 	end
 	#@error = c.errors.messages.values.join(',')
 end
