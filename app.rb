@@ -47,6 +47,8 @@ post '/visit' do
 	#@error = c.errors.messages.values.join(',')
 end
 
-# get '/alll'
-# 	@error = ЛАлАл
-# end
+get '/barber/:id' do
+
+	erb :barber
+	
+end
