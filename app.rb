@@ -44,6 +44,8 @@ post '/visit' do
 		#@error = 'Введите все данные'
 		erb :visit
 	end
+
+
 	#@error = c.errors.messages.values.join(',')
 end
 
